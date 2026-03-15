@@ -1,0 +1,38 @@
+{
+  "name": "astro-teach",
+  "version": "1.0.0",
+  "description": "天文教学自动化系统 - OpenClaw Plugin",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts"
+  },
+  "keywords": [
+    "astronomy",
+    "education",
+    "automation",
+    "openclaw",
+    "plugin"
+  ],
+  "author": "你的名字 <your.email@example.com>",
+  "license": "MIT",
+  "dependencies": {
+    "serialport": "^12.0.0",
+    "yaml": "^2.3.4",
+    "node-cron": "^3.0.3",
+    "dayjs": "^1.11.10",
+    "tzdata": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0",
+    "eslint": "^8.55.0"
+  },
+  "openclaw": {
+    "extensions": ["./index.ts"],
+    "skills": ["./skills/astro-teacher"]
+  }
+}

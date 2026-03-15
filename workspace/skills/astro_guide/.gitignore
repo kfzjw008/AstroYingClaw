@@ -1,0 +1,39 @@
+# AstroGuide Skill - Git 忽略文件
+
+# 环境配置（包含敏感信息）
+.env
+.env.local
+
+# Python 相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 虚拟环境
+venv/
+ENV/
+.venv
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+
+# TTS 音频缓存
+*.mp3
+*.wav
+*.m4a
+
+# 系统文件
+.DS_Store
+Thumbs.db

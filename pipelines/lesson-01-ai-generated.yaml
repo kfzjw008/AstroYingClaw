@@ -1,0 +1,192 @@
+# AI实时生成内容的天文课程示例
+name: 夏季星空课程（AI生成版）
+version: "1.0"
+author: "天文教学系统"
+duration: 20  # 课程时长（分钟）
+
+description: |
+  本课程使用AI实时生成教学内容，每段讲解都是由LLM根据天体信息实时生成的，
+  然后通过TTS语音播报。无需预录制音频，内容灵活可变。
+
+steps:
+  # 课程开始（第0秒）
+  - time: 0
+    description: "课程介绍"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: course_intro
+      courseName: "夏季星空探索"
+      duration: 30
+      topics: ["夏季大三角", "天狼星", "北极星", "北斗七星"]
+      targetAudience: "beginner"
+      showContent: true  # 在课件中显示生成的文字
+
+  # 观测地点介绍（第30秒）
+  - time: 30
+    description: "观测地点介绍"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: location
+      location: "北京"
+      latitude: 39.9
+      longitude: 116.4
+      observationTips: true
+      showContent: true
+
+  # 指向织女星（第60秒）
+  - time: 60
+    description: "指向织女星并AI讲解"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: celestial
+      objectName: "织女星"
+      targetAudience: "beginner"
+      duration: 45
+      showContent: true
+      # 同时控制指星仪
+      serialCommand:
+        command: "MOVE"
+        params:
+          objectName: "织女星"
+
+  # 指向牛郎星（第105秒）
+  - time: 105
+    description: "指向牛郎星并AI讲解"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: celestial
+      objectName: "牛郎星"
+      targetAudience: "beginner"
+      duration: 45
+      showContent: true
+      serialCommand:
+        command: "MOVE"
+        params:
+          objectName: "牛郎星"
+
+  # 指向天津四（第150秒）
+  - time: 150
+    description: "指向天津四并AI讲解"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: celestial
+      objectName: "天津四"
+      targetAudience: "beginner"
+      duration: 45
+      showContent: true
+      serialCommand:
+        command: "MOVE"
+        params:
+          objectName: "天津四"
+
+  # 夏季大三角总结（第195秒）
+  - time: 195
+    description: "夏季大三角总结"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: celestial
+      objectName: "夏季大三角"
+      targetAudience: "beginner"
+      duration: 60
+      showContent: true
+
+  # 指向天狼星（第255秒）
+  - time: 255
+    description: "指向天狼星并AI讲解"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: celestial
+      objectName: "天狼星"
+      targetAudience: "intermediate"
+      duration: 60
+      showContent: true
+      serialCommand:
+        command: "MOVE"
+        params:
+          objectName: "天狼星"
+
+  # 指向北极星（第315秒）
+  - time: 315
+    description: "指向北极星并AI讲解"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: celestial
+      objectName: "北极星"
+      targetAudience: "beginner"
+      duration: 45
+      showContent: true
+      serialCommand:
+        command: "MOVE"
+        params:
+          objectName: "北极星"
+
+  # 指向北斗七星（第360秒）
+  - time: 360
+    description: "指向北斗七星并AI讲解"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: celestial
+      objectName: "北斗七星"
+      targetAudience: "beginner"
+      duration: 60
+      showContent: true
+      serialCommand:
+        command: "MOVE"
+        params:
+          objectName: "北斗七星"
+
+  # 指向心宿二（第420秒）
+  - time: 420
+    description: "指向心宿二并AI讲解"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: celestial
+      objectName: "心宿二"
+      targetAudience: "intermediate"
+      duration: 45
+      showContent: true
+      serialCommand:
+        command: "MOVE"
+        params:
+          objectName: "心宿二"
+
+  # 课程总结（第465秒）
+  - time: 465
+    description: "课程总结"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: summary
+      topics: ["夏季大三角", "天狼星", "北极星", "北斗七星", "心宿二"]
+      highlights: ["织女星的快速自转", "天狼星的双星系统", "北极星的导航作用"]
+      duration: 60
+      showContent: true
+
+  # 结束归位（第525秒）
+  - time: 525
+    description: "归位"
+    enabled: true
+    action:
+      type: serial
+      command: "PARK"
+
+  # 课程结束（第540秒）
+  - time: 540
+    description: "结束语"
+    enabled: true
+    action:
+      type: ai_generate
+      generateType: summary
+      topics: ["天文观测"]
+      duration: 30
+      showContent: true

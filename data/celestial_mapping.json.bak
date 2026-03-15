@@ -1,0 +1,336 @@
+{
+  "stars": {
+    "天狼星": {
+      "name": "天狼星",
+      "englishName": "Sirius",
+      "designation": "α CMa",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 6.7525,
+        "declination": -16.7161
+      },
+      "magnitude": -1.46,
+      "description": "夜空中最亮的恒星，位于大犬座，距离地球8.6光年",
+      "constellation": "大犬座",
+      "color": "蓝白色",
+      "distance": "8.6光年"
+    },
+    "织女星": {
+      "name": "织女星",
+      "englishName": "Vega",
+      "designation": "α Lyr",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 18.6156,
+        "declination": 38.7836
+      },
+      "magnitude": 0.03,
+      "description": "天琴座最亮的恒星，夏季大三角之一",
+      "constellation": "天琴座",
+      "color": "蓝白色",
+      "distance": "25光年"
+    },
+    "牛郎星": {
+      "name": "牛郎星",
+      "englishName": "Altair",
+      "designation": "α Aql",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 19.8463,
+        "declination": 8.8683
+      },
+      "magnitude": 0.77,
+      "description": "天鹰座最亮的恒星，夏季大三角之一",
+      "constellation": "天鹰座",
+      "color": "白色",
+      "distance": "16.7光年"
+    },
+    "天津四": {
+      "name": "天津四",
+      "englishName": "Deneb",
+      "designation": "α Cyg",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 20.6931,
+        "declination": 45.2804
+      },
+      "magnitude": 1.25,
+      "description": "天鹅座最亮的恒星，夏季大三角之一",
+      "constellation": "天鹅座",
+      "color": "白色",
+      "distance": "2600光年"
+    },
+    "参宿四": {
+      "name": "参宿四",
+      "englishName": "Betelgeuse",
+      "designation": "α Ori",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 5.9195,
+        "declination": 7.4071
+      },
+      "magnitude": 0.5,
+      "description": "猎户座红超巨星，即将爆发的超新星",
+      "constellation": "猎户座",
+      "color": "红色",
+      "distance": "700光年"
+    },
+    "参宿七": {
+      "name": "参宿七",
+      "englishName": "Rigel",
+      "designation": "β Ori",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 5.2423,
+        "declination": -8.2016
+      },
+      "magnitude": 0.13,
+      "description": "猎户座蓝超巨星，夜空第七亮星",
+      "constellation": "猎户座",
+      "color": "蓝白色",
+      "distance": "860光年"
+    },
+    "大角星": {
+      "name": "大角星",
+      "englishName": "Arcturus",
+      "designation": "α Boo",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 14.2610,
+        "declination": 19.1825
+      },
+      "magnitude": -0.05,
+      "description": "牧夫座最亮的恒星，北半球夜空最亮",
+      "constellation": "牧夫座",
+      "color": "橙色",
+      "distance": "36.7光年"
+    },
+    "五车二": {
+      "name": "五车二",
+      "englishName": "Capella",
+      "designation": "α Aur",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 5.2781,
+        "declination": 45.9979
+      },
+      "magnitude": 0.08,
+      "description": "御夫座最亮的恒星",
+      "constellation": "御夫座",
+      "color": "黄白色",
+      "distance": "42.9光年"
+    },
+    "轩辕十四": {
+      "name": "轩辕十四",
+      "englishName": "Regulus",
+      "designation": "α Leo",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 10.1379,
+        "declination": 11.9672
+      },
+      "magnitude": 1.40,
+      "description": "狮子座最亮的恒星",
+      "constellation": "狮子座",
+      "color": "蓝白色",
+      "distance": "79.3光年"
+    },
+    "心宿二": {
+      "name": "心宿二",
+      "englishName": "Antares",
+      "designation": "α Sco",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 16.4901,
+        "declination": -26.4320
+      },
+      "magnitude": 1.06,
+      "description": "天蝎座红超巨星，夏季南天最亮",
+      "constellation": "天蝎座",
+      "color": "红色",
+      "distance": "550光年"
+    },
+    "南河三": {
+      "name": "南河三",
+      "englishName": "Procyon",
+      "designation": "α CMi",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 7.6542,
+        "declination": 5.2252
+      },
+      "magnitude": 0.34,
+      "description": "小犬座最亮的恒星",
+      "constellation": "小犬座",
+      "color": "黄白色",
+      "distance": "11.4光年"
+    },
+    "北极星": {
+      "name": "北极星",
+      "englishName": "Polaris",
+      "designation": "α UMi",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 2.5302,
+        "declination": 89.2641
+      },
+      "magnitude": 1.98,
+      "description": "小熊座最亮的恒星，指示正北方向",
+      "constellation": "小熊座",
+      "color": "黄白色",
+      "distance": "433光年"
+    },
+    "角宿一": {
+      "name": "角宿一",
+      "englishName": "Spica",
+      "designation": "α Vir",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 13.4199,
+        "declination": -11.1613
+      },
+      "magnitude": 0.97,
+      "description": "室女座最亮的恒星",
+      "constellation": "室女座",
+      "color": "蓝白色",
+      "distance": "250光年"
+    },
+    "毕宿五": {
+      "name": "毕宿五",
+      "englishName": "Aldebaran",
+      "designation": "α Tau",
+      "type": "star",
+      "coordinates": {
+        "rightAscension": 4.5987,
+        "declination": 16.5093
+      },
+      "magnitude": 0.85,
+      "description": "金牛座最亮的恒星",
+      "constellation": "金牛座",
+      "color": "橙色",
+      "distance": "65.3光年"
+    }
+  },
+  "constellations": {
+    "大犬座": {
+      "name": "大犬座",
+      "englishName": "Canis Major",
+      "abbreviation": "CMa",
+      " brightestStar": "天狼星",
+      "season": "冬季",
+      "description": "包含夜空中最亮恒星天狼星"
+    },
+    "小犬座": {
+      "name": "小犬座",
+      "englishName": "Canis Minor",
+      "abbreviation": "CMi",
+      "brightestStar": "南河三",
+      "season": "冬季",
+      "description": "冬季星空的小星座"
+    },
+    "猎户座": {
+      "name": "猎户座",
+      "englishName": "Orion",
+      "abbreviation": "Ori",
+      "brightestStar": "参宿七",
+      "season": "冬季",
+      "description": "最著名的星座之一，拥有参宿四和参宿七"
+    },
+    "金牛座": {
+      "name": "金牛座",
+      "englishName": "Taurus",
+      "abbreviation": "Tau",
+      "brightestStar": "毕宿五",
+      "season": "冬季",
+      "description": "黄道星座之一"
+    },
+    "双子座": {
+      "name": "双子座",
+      "englishName": "Gemini",
+      "abbreviation": "Gem",
+      "brightestStar": "北河三",
+      "season": "冬季",
+      "description": "黄道星座之一"
+    },
+    "狮子座": {
+      "name": "狮子座",
+      "englishName": "Leo",
+      "abbreviation": "Leo",
+      "brightestStar": "轩辕十四",
+      "season": "春季",
+      "description": "黄道星座之一，春季星空代表"
+    },
+    "室女座": {
+      "name": "室女座",
+      "englishName": "Virgo",
+      "abbreviation": "Vir",
+      "brightestStar": "角宿一",
+      "season": "春季",
+      "description": "黄道星座之一"
+    },
+    "牧夫座": {
+      "name": "牧夫座",
+      "englishName": "Boötes",
+      "abbreviation": "Boo",
+      "brightestStar": "大角星",
+      "season": "春季",
+      "description": "春季大熊座下方"
+    },
+    "天蝎座": {
+      "name": "天蝎座",
+      "englishName": "Scorpius",
+      "abbreviation": "Sco",
+      "brightestStar": "心宿二",
+      "season": "夏季",
+      "description": "夏季南天最壮观的星座"
+    },
+    "天琴座": {
+      "name": "天琴座",
+      "englishName": "Lyra",
+      "abbreviation": "Lyr",
+      "brightestStar": "织女星",
+      "season": "夏季",
+      "description": "夏季大三角之一"
+    },
+    "天鹰座": {
+      "name": "天鹰座",
+      "englishName": "Aquila",
+      "abbreviation": "Aql",
+      "brightestStar": "牛郎星",
+      "season": "夏季",
+      "description": "夏季大三角之一"
+    },
+    "天鹅座": {
+      "name": "天鹅座",
+      "englishName": "Cygnus",
+      "abbreviation": "Cyg",
+      "brightestStar": "天津四",
+      "season": "夏季",
+      "description": "夏季大三角之一"
+    },
+    "大熊座": {
+      "name": "大熊座",
+      "englishName": "Ursa Major",
+      "abbreviation": "UMa",
+      "brightestStar": "玉衡",
+      "season": "春季",
+      "description": "包含北斗七星"
+    },
+    "小熊座": {
+      "name": "小熊座",
+      "englishName": "Ursa Minor",
+      "abbreviation": "UMi",
+      "brightestStar": "北极星",
+      "season": "全年",
+      "description": "包含北极星，指示正北"
+    },
+    "仙后座": {
+      "name": "仙后座",
+      "englishName": "Cassiopeia",
+      "abbreviation": "Cas",
+      "brightestStar": "王良四",
+      "season": "秋季",
+      "description": "呈W形状的星座"
+    }
+  }
+}

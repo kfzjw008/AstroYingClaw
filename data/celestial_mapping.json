@@ -1,0 +1,122 @@
+{
+  "天狼星": {
+    "name": "天狼星",
+    "englishName": "Sirius",
+    "designation": "α CMa",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 6.7525,
+      "declination": -16.7161
+    },
+    "magnitude": -1.46,
+    "description": "夜空中最亮的恒星"
+  },
+  "织女星": {
+    "name": "织女星",
+    "englishName": "Vega",
+    "designation": "α Lyr",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 18.6156,
+      "declination": 38.7836
+    },
+    "magnitude": 0.03,
+    "description": "天琴座最亮的恒星"
+  },
+  "牛郎星": {
+    "name": "牛郎星",
+    "englishName": "Altair",
+    "designation": "α Aql",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 19.8463,
+      "declination": 8.8683
+    },
+    "magnitude": 0.77,
+    "description": "天鹰座最亮的恒星"
+  },
+  "天津四": {
+    "name": "天津四",
+    "englishName": "Deneb",
+    "designation": "α Cyg",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 20.6931,
+      "declination": 45.2804
+    },
+    "magnitude": 1.25,
+    "description": "天鹅座最亮的恒星"
+  },
+  "心宿二": {
+    "name": "心宿二",
+    "englishName": "Antares",
+    "designation": "α Sco",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 16.4901,
+      "declination": -26.4320
+    },
+    "magnitude": 1.06,
+    "description": "天蝎座最亮的恒星"
+  },
+  "参宿四": {
+    "name": "参宿四",
+    "englishName": "Betelgeuse",
+    "designation": "α Ori",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 5.9195,
+      "declination": 7.4071
+    },
+    "magnitude": 0.5,
+    "description": "猎户座红超巨星"
+  },
+  "参宿七": {
+    "name": "参宿七",
+    "englishName": "Rigel",
+    "designation": "β Ori",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 5.2423,
+      "declination": -8.2016
+    },
+    "magnitude": 0.13,
+    "description": "猎户座蓝超巨星"
+  },
+  "北极星": {
+    "name": "北极星",
+    "englishName": "Polaris",
+    "designation": "α UMi",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 2.5302,
+      "declination": 89.2641
+    },
+    "magnitude": 1.98,
+    "description": "指示正北方向"
+  },
+  "大角星": {
+    "name": "大角星",
+    "englishName": "Arcturus",
+    "designation": "α Boo",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 14.2610,
+      "declination": 19.1825
+    },
+    "magnitude": -0.05,
+    "description": "牧夫座最亮的恒星"
+  },
+  "角宿一": {
+    "name": "角宿一",
+    "englishName": "Spica",
+    "designation": "α Vir",
+    "type": "star",
+    "coordinates": {
+      "rightAscension": 13.4199,
+      "declination": -11.1613
+    },
+    "magnitude": 0.97,
+    "description": "室女座最亮的恒星"
+  }
+}

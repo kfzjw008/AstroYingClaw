@@ -1,0 +1,479 @@
+name: "第二课：完整观测课程 - 四季星空"
+description: "完整的四季星空观测课程，涵盖黄道十二星座和重要天体"
+version: "1.0.0"
+author: "天文教学系统"
+duration: 60
+timezone: "Asia/Shanghai"
+
+metadata:
+  subject: "天文学"
+  grade: "高中"
+  difficulty: "medium"
+  tags:
+    - "四季星空"
+    - "黄道十二星座"
+    - "深空天体"
+    - "完整观测"
+
+steps:
+  # ========================================
+  # 第一部分：课程导入与春季星空 (0-15分钟)
+  # ========================================
+
+  # 欢迎与课程介绍（0秒）
+  - time: 0
+    action:
+      type: "audio"
+      file: "course-intro.mp3"
+      volume: 80
+      wait: false
+    description: "课程介绍与欢迎"
+
+  # 设备初始化（30秒）
+  - time: 30
+    action:
+      type: "serial"
+      command: "HOME"
+      retryOnFail: true
+    description: "设备归零"
+
+  # 春季星空介绍（60秒）
+  - time: 60
+    action:
+      type: "audio"
+      file: "spring-intro.mp3"
+      volume: 85
+      wait: true
+    description: "春季星空介绍"
+
+  # 指向狮子座轩辕十四（120秒）
+  - time: 120
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "轩辕十四"
+      retryOnFail: true
+    description: "移动到轩辕十四"
+
+  - time: 125
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 10000
+        - type: "audio"
+          file: "regulus.mp3"
+          volume: 85
+          wait: true
+    description: "轩辕十四讲解（激光+音频同步）"
+
+  # 指向室女座角宿一（180秒）
+  - time: 180
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "角宿一"
+      retryOnFail: true
+    description: "移动到角宿一"
+
+  - time: 185
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 10000
+        - type: "audio"
+          file: "spica.mp3"
+          volume: 85
+          wait: true
+    description: "角宿一讲解"
+
+  # 指向牧夫座大角星（240秒）
+  - time: 240
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "大角星"
+      retryOnFail: true
+    description: "移动到大角星"
+
+  - time: 245
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 10000
+        - type: "audio"
+          file: "arcturus.mp3"
+          volume: 85
+          wait: true
+    description: "大角星讲解"
+
+  # 春季星空总结（300秒）
+  - time: 300
+    action:
+      type: "audio"
+      file: "spring-summary.mp3"
+      volume: 80
+      wait: true
+    description: "春季星空总结"
+
+  # ========================================
+  # 第二部分：夏季星空 (15-30分钟)
+  # ========================================
+
+  # 夏季星空介绍（600秒）
+  - time: 600
+    action:
+      type: "audio"
+      file: "summer-intro.mp3"
+      volume: 85
+      wait: true
+    description: "夏季星空介绍"
+
+  # 夏季大三角 - 织女星（660秒）
+  - time: 660
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "织女星"
+      retryOnFail: true
+    description: "移动到织女星"
+
+  - time: 665
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 12000
+        - type: "audio"
+          file: "vega-detail.mp3"
+          volume: 85
+          wait: true
+    description: "织女星详细讲解"
+
+  # 夏季大三角 - 牛郎星（720秒）
+  - time: 720
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "牛郎星"
+      retryOnFail: true
+    description: "移动到牛郎星"
+
+  - time: 725
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 12000
+        - type: "audio"
+          file: "altair-detail.mp3"
+          volume: 85
+          wait: true
+    description: "牛郎星详细讲解"
+
+  # 夏季大三角 - 天津四（780秒）
+  - time: 780
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "天津四"
+      retryOnFail: true
+    description: "移动到天津四"
+
+  - time: 785
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 12000
+        - type: "audio"
+          file: "deneb-detail.mp3"
+          volume: 85
+          wait: true
+    description: "天津四详细讲解"
+
+  # 天蝎座心宿二（840秒）
+  - time: 840
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "心宿二"
+      retryOnFail: true
+    description: "移动到心宿二"
+
+  - time: 845
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 15000
+        - type: "audio"
+          file: "scorpius.mp3"
+          volume: 85
+          wait: true
+    description: "天蝎座与心宿二详细讲解"
+
+  # 猎户座参宿四与参宿七（900秒）
+  - time: 900
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        azimuth: 240.5
+        altitude: 45.0
+      retryOnFail: true
+    description: "移动到猎户座方向"
+
+  - time: 905
+    action:
+      type: "audio"
+      file: "orion.mp3"
+      volume: 85
+      wait: true
+    description: "猎户座讲解"
+
+  # ========================================
+  # 第三部分：秋季星空 (30-45分钟)
+  # ========================================
+
+  # 秋季星空介绍（1200秒）
+  - time: 1200
+    action:
+      type: "audio"
+      file: "autumn-intro.mp3"
+      volume: 85
+      wait: true
+    description: "秋季星空介绍"
+
+  # 仙后座（1260秒）
+  - time: 1260
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        azimuth: 10.0
+        altitude: 60.0
+      retryOnFail: true
+    description: "移动到仙后座"
+
+  - time: 1265
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 12000
+        - type: "audio"
+          file: "cassiopeia.mp3"
+          volume: 85
+          wait: true
+    description: "仙后座讲解"
+
+  # 仙女座与飞马座（1320秒）
+  - time: 1320
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        azimuth: 350.0
+        altitude: 50.0
+      retryOnFail: true
+    description: "移动到仙女座方向"
+
+  - time: 1325
+    action:
+      type: "audio"
+      file: "andromeda.mp3"
+      volume: 85
+      wait: true
+    description: "仙女座星系讲解"
+
+  # ========================================
+  # 第四部分：冬季星空与深空天体 (45-60分钟)
+  # ========================================
+
+  # 冬季星空介绍（1800秒）
+  - time: 1800
+    action:
+      type: "audio"
+      file: "winter-intro.mp3"
+      volume: 85
+      wait: true
+    description: "冬季星空介绍"
+
+  # 猎户座大星云M42（1860秒）
+  - time: 1860
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        azimuth: 245.0
+        altitude: 40.0
+      retryOnFail: true
+    description: "移动到猎户座大星云方向"
+
+  - time: 1865
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 15000
+        - type: "audio"
+          file: "orion-nebula.mp3"
+          volume: 85
+          wait: true
+    description: "猎户座大星云M42讲解"
+
+  # 金牛座毕宿五与昴星团（1920秒）
+  - time: 1920
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "毕宿五"
+      retryOnFail: true
+    description: "移动到毕宿五"
+
+  - time: 1925
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 12000
+        - type: "audio"
+          file: "taurus.mp3"
+          volume: 85
+          wait: true
+    description: "金牛座与昴星团讲解"
+
+  # 双子座北河三（1980秒）
+  - time: 1980
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        azimuth: 280.0
+        altitude: 65.0
+      retryOnFail: true
+    description: "移动到双子座"
+
+  - time: 1985
+    action:
+      type: "audio"
+      file: "gemini.mp3"
+      volume: 85
+      wait: true
+    description: "双子座讲解"
+
+  # 黄道十二星座总结（2040秒）
+  - time: 2040
+    action:
+      type: "audio"
+      file: "zodiac-summary.mp3"
+      volume: 85
+      wait: true
+    description: "黄道十二星座总结"
+
+  # ========================================
+  # 第五部分：重要天体与观测技巧 (最后一部分)
+  # ========================================
+
+  # 北极星与方向辨别（2100秒）
+  - time: 2100
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "北极星"
+      retryOnFail: true
+    description: "移动到北极星"
+
+  - time: 2105
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 15000
+        - type: "audio"
+          file: "polaris-navigation.mp3"
+          volume: 85
+          wait: true
+    description: "北极星与方向辨别技巧"
+
+  # 北斗七星（2160秒）
+  - time: 2160
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        azimuth: 350.5
+        altitude: 55.0
+      retryOnFail: true
+    description: "移动到北斗七星"
+
+  - time: 2165
+    action:
+      type: "parallel"
+      actions:
+        - type: "laser"
+          enabled: true
+          duration: 15000
+        - type: "audio"
+          file: "big-dipper-detail.mp3"
+          volume: 85
+          wait: true
+    description: "北斗七星详细讲解"
+
+  # 观测技巧与注意事项（2220秒）
+  - time: 2220
+    action:
+      type: "audio"
+      file: "observation-tips.mp3"
+      volume: 85
+      wait: true
+    description: "天文观测技巧与注意事项"
+
+  # 课程总结（2280秒）
+  - time: 2280
+    action:
+      type: "audio"
+      file: "course-summary.mp3"
+      volume: 85
+      wait: true
+    description: "完整课程总结"
+
+  # 设备停放（2340秒）
+  - time: 2340
+    action:
+      type: "serial"
+      command: "PARK"
+      retryOnFail: true
+    description: "停放设备"
+
+  # 课程结束（2345秒）
+  - time: 2345
+    action:
+      type: "audio"
+      file: "course-end.mp3"
+      volume: 80
+      wait: true
+    description: "课程结束"

@@ -1,0 +1,157 @@
+{
+  "$schema": "https://openclaw.dev/schemas/skill-v1.json",
+  "name": "point_star_and_speak",
+  "displayName": "🔭 智慧天文指星仪控制器（课件自动生成版）",
+  "version": "2.1.0",
+  "author": "AstroClaw Team",
+  "description": "当用户询问星空、星座、天体等相关问题时必须调用的全能型硬件控制+生产力工具。该技能具备三大核心能力：\n\n1. **课件自动生成**：在本地自动生成约2000字的 Markdown 讲稿和包含4-5页的 PowerPoint 课件文件，保存到 output/ 目录。\n\n2. **硬件控制**：通过串口驱动激光笔和陀螺仪云台指向指定天体坐标（赤经/赤纬）。\n\n3. **语音解说**：同步播放 TTS 语音，实现边指星边讲解的沉浸式体验。\n\n**重要提示**：当大模型需要讲解天体时，必须同时生成三个部分的内容并打包传给此工具：\n- `lecture_md`：约2000字的深度科普讲稿（Markdown 格式），包含完整的知识体系、历史背景、科学原理等。\n- `ppt_slides`：4-5页 PPT 大纲，每页包含标题和核心知识点数组。\n- `lesson_script`：3-8个步骤的硬件动作剧本，每步包含解说词和目标天体坐标。\n\n工具会先在本地生成讲稿和课件文件，然后按顺序执行硬件指向和语音播放。支持自动降级到 Mock 模式（无硬件时打印虚拟日志）。",
+  "category": "hardware",
+  "tags": ["astronomy", "hardware", "tts", "serial", "education", "productivity", "ppt", "markdown"],
+  "entrypoint": "python run_hardware.py '{lesson_script}' '{lecture_md}' '{ppt_slides}'",
+  "parameters": {
+    "type": "object",
+    "required": ["lesson_script", "lecture_md", "ppt_slides"],
+    "properties": {
+      "lesson_script": {
+        "type": "array",
+        "description": "硬件动作剧本数组，包含多个讲解步骤。每个步骤是一个对象，包含解说词和目标天体坐标。工具会按顺序遍历数组，对每个步骤先发送坐标控制激光笔指向目标天体，然后播放对应的语音解说，等待播放完成后进入下一步。建议包含 3-8 个步骤，每个步骤的解说词 30-80 字。",
+        "items": {
+          "type": "object",
+          "required": ["text", "ra", "dec"],
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "该步骤的解说词内容，将直接通过 TTS 引擎播放给用户听。应该使用口语化、易懂的天文科普语言，30-80 字为宜。",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "ra": {
+              "type": "number",
+              "description": "该步骤目标天体的赤经（Right Ascension），单位为小时，取值范围 0-24。赤经类似于地球的经度，用于定位天体在天球上的东西方向位置。",
+              "minimum": 0,
+              "maximum": 24
+            },
+            "dec": {
+              "type": "number",
+              "description": "该步骤目标天体的赤纬（Declination），单位为度，取值范围 -90 到 +90。赤纬类似于地球的纬度，+90 表示天球北极（北极星附近），-90 表示天球南极。",
+              "minimum": -90,
+              "maximum": 90
+            }
+          }
+        },
+        "minItems": 1,
+        "maxItems": 20
+      },
+      "lecture_md": {
+        "type": "string",
+        "description": "完整的长篇科普讲稿（Markdown 格式），约 2000 字。这是深度学习材料，包含以下结构：\n\n1. **引言**（200字）：概述主题重要性\n2. **核心知识**（800字）：详细讲解科学原理、历史背景、观测方法等\n3. **延伸阅读**（500字）：相关天体、科学发现、文化意义等\n4. **总结**（300字）：知识要点回顾和探索建议\n5. **参考资料**（200字）：推荐书籍、网站、观测工具等\n\n讲稿将被保存为本地 Markdown 文件，供用户课后复习使用。",
+        "minLength": 500,
+        "maxLength": 10000
+      },
+      "ppt_slides": {
+        "type": "array",
+        "description": "PowerPoint 课件页面数组，包含 4-5 个幻灯片对象。每个对象代表一页 PPT，包含标题和核心知识点列表。工具会自动生成可编辑的 .pptx 文件，保存到本地。",
+        "items": {
+          "type": "object",
+          "required": ["title", "bullets"],
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "幻灯片标题，简明扼要地概括本页主题。",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "bullets": {
+              "type": "array",
+              "description": "本页的核心知识点列表，每个要点是一个字符串。建议每页包含 3-6 个要点。",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "minItems": 1,
+              "maxItems": 10
+            }
+          }
+        },
+        "minItems": 1,
+        "maxItems": 20
+      }
+    },
+    "additionalProperties": false
+  },
+  "returns": {
+    "type": "object",
+    "description": "技能执行结果，会被 OpenClaw Agent 捕获以确认操作状态。执行完毕后会返回生成的文件路径、总步骤数和执行状态。",
+    "properties": {
+      "status": {
+        "type": "string",
+        "enum": ["success", "error"],
+        "description": "执行状态：success 表示成功，error 表示失败"
+      },
+      "msg": {
+        "type": "string",
+        "description": "执行结果消息，包含生成的文件信息和执行状态"
+      },
+      "files_generated": {
+        "type": "object",
+        "description": "生成的文件信息",
+        "properties": {
+          "markdown_file": {
+            "type": "string",
+            "description": "生成的 Markdown 讲稿文件路径"
+          },
+          "pptx_file": {
+            "type": "string",
+            "description": "生成的 PowerPoint 课件文件路径"
+          }
+        }
+      },
+      "total_steps": {
+        "type": "number",
+        "description": "执行的总步骤数"
+      },
+      "completed_steps": {
+        "type": "number",
+        "description": "成功完成的步骤数"
+      }
+    }
+  },
+  "capabilities": {
+    "hardware_control": true,
+    "audio_output": true,
+    "file_generation": true,
+    "sequential_execution": true,
+    "mock_mode": true,
+    "productivity_tools": true
+  },
+  "dependencies": [
+    "pyserial>=3.5",
+    "edge-tts>=6.1.9",
+    "pyttsx3>=2.90",
+    "python-pptx>=0.6.21"
+  ],
+  "environment": {
+    "serial_port": {
+      "type": "string",
+      "description": "串口设备名称（可选），留空则使用 Mock 模式。Windows: COM3, Linux: /dev/ttyUSB0",
+      "default": ""
+    },
+    "tts_engine": {
+      "type": "string",
+      "description": "TTS 引擎选择：edge（推荐）或 pyttsx3（离线）",
+      "default": "edge",
+      "enum": ["edge", "pyttsx3"]
+    },
+    "step_delay": {
+      "type": "number",
+      "description": "步骤间延迟时间（秒），默认 0.5 秒",
+      "default": 0.5
+    },
+    "output_dir": {
+      "type": "string",
+      "description": "输出目录路径，默认为脚本所在目录的 output/ 子目录",
+      "default": "output"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(python:*)",
+      "Bash(tree:*)",
+      "Bash(ls:*)",
+      "Bash(openclaw doctor:*)",
+      "Bash(openclaw:*)",
+      "Bash(taskkill:*)",
+      "Bash(openclau:*)",
+      "Bash(chmod:*)",
+      "Bash(node:*)",
+      "Bash(xcopy:*)",
+      "Bash(for:*)",
+      "Bash(do if [ -f \"C:/Users/kfzha/.openclaw/extensions/astro-teach/$file\" ])",
+      "Bash(then echo \"✅ $file\")",
+      "Bash(else echo \"❌ $file - 缺失\")",
+      "Bash(fi:*)",
+      "Bash(done)",
+      "Bash(tasklist:*)",
+      "Bash(find:*)",
+      "Bash(test:*)",
+      "Bash(rsync:*)",
+      "Bash(cmd:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

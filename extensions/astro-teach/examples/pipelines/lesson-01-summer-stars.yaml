@@ -1,0 +1,266 @@
+name: "第一课：夏季星空入门"
+description: "认识夏季夜空中最亮的恒星和星座，包括夏季大三角"
+version: "1.0.0"
+author: "天文教学系统"
+duration: 20
+timezone: "Asia/Shanghai"
+
+metadata:
+  subject: "天文学"
+  grade: "初中"
+  difficulty: "easy"
+  tags:
+    - "夏季星空"
+    - "恒星"
+    - "星座识别"
+
+steps:
+  # 课程开始 - 欢迎语音（0秒）
+  - time: 0
+    action:
+      type: "audio"
+      file: "intro.mp3"
+      volume: 80
+      wait: false
+    description: "播放课程欢迎语音"
+
+  # 设备初始化 - 归零（10秒）
+  - time: 10
+    action:
+      type: "serial"
+      command: "HOME"
+      retryOnFail: true
+      timeout: 5000
+    description: "指星仪归零初始化"
+
+  # 等待归零完成（15秒）
+  - time: 15
+    action:
+      type: "wait"
+      duration: 3000
+    description: "等待归零完成"
+
+  # 指向织女星（20秒）
+  - time: 20
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "织女星"
+      retryOnFail: true
+    description: "移动到织女星"
+
+  # 开启激光指示（25秒）
+  - time: 25
+    action:
+      type: "laser"
+      enabled: true
+      duration: 8000
+    description: "开启激光指示织女星"
+
+  # 织女星讲解（25秒）
+  - time: 25
+    action:
+      type: "audio"
+      file: "vega.mp3"
+      volume: 85
+      wait: true
+    description: "播放织女星讲解"
+
+  # 指向牛郎星（60秒）
+  - time: 60
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "牛郎星"
+      retryOnFail: true
+    description: "移动到牛郎星"
+
+  # 开启激光指示（65秒）
+  - time: 65
+    action:
+      type: "laser"
+      enabled: true
+      duration: 8000
+    description: "开启激光指示牛郎星"
+
+  # 牛郎星讲解（65秒）
+  - time: 65
+    action:
+      type: "audio"
+      file: "altair.mp3"
+      volume: 85
+      wait: true
+    description: "播放牛郎星讲解"
+
+  # 指向天津四（100秒）
+  - time: 100
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "天津四"
+      retryOnFail: true
+    description: "移动到天津四"
+
+  # 开启激光指示（105秒）
+  - time: 105
+    action:
+      type: "laser"
+      enabled: true
+      duration: 8000
+    description: "开启激光指示天津四"
+
+  # 天津四讲解（105秒）
+  - time: 105
+    action:
+      type: "audio"
+      file: "deneb.mp3"
+      volume: 85
+      wait: true
+    description: "播放天津四讲解"
+
+  # 夏季大三角总结（140秒）
+  - time: 140
+    action:
+      type: "audio"
+      file: "summer-triangle.mp3"
+      volume: 80
+      wait: true
+    description: "夏季大三角总结讲解"
+
+  # 指向天蝎座心宿二（180秒）
+  - time: 180
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "心宿二"
+      retryOnFail: true
+    description: "移动到心宿二"
+
+  # 开启激光指示（185秒）
+  - time: 185
+    action:
+      type: "laser"
+      enabled: true
+      duration: 10000
+    description: "开启激光指示心宿二"
+
+  # 心宿二讲解（185秒）
+  - time: 185
+    action:
+      type: "audio"
+      file: "antares.mp3"
+      volume: 85
+      wait: true
+    description: "播放心宿二讲解"
+
+  # 指向天狼星（240秒）
+  - time: 240
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "天狼星"
+      retryOnFail: true
+    description: "移动到天狼星"
+
+  # 开启激光指示（245秒）
+  - time: 245
+    action:
+      type: "laser"
+      enabled: true
+      duration: 8000
+    description: "开启激光指示天狼星"
+
+  # 天狼星讲解（245秒）
+  - time: 245
+    action:
+      type: "audio"
+      file: "sirius.mp3"
+      volume: 85
+      wait: true
+    description: "播放天狼星讲解"
+
+  # 观察大熊座北斗七星（300秒）
+  - time: 300
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        azimuth: 350.5
+        altitude: 55.0
+      retryOnFail: true
+    description: "移动到大熊座方向"
+
+  # 北斗七星讲解（305秒）
+  - time: 305
+    action:
+      type: "audio"
+      file: "big-dipper.mp3"
+      volume: 85
+      wait: true
+    description: "播放北斗七星讲解"
+
+  # 开启激光指示北斗七星（305秒）
+  - time: 305
+    action:
+      type: "laser"
+      enabled: true
+      duration: 12000
+    description: "开启激光指示北斗七星"
+
+  # 指向北极星（360秒）
+  - time: 360
+    action:
+      type: "serial"
+      command: "MOVE"
+      params:
+        objectName: "北极星"
+      retryOnFail: true
+    description: "移动到北极星"
+
+  # 开启激光指示（365秒）
+  - time: 365
+    action:
+      type: "laser"
+      enabled: true
+      duration: 10000
+    description: "开启激光指示北极星"
+
+  # 北极星讲解（365秒）
+  - time: 365
+    action:
+      type: "audio"
+      file: "polaris.mp3"
+      volume: 85
+      wait: true
+    description: "播放北极星讲解"
+
+  # 课程总结（420秒）
+  - time: 420
+    action:
+      type: "audio"
+      file: "summary.mp3"
+      volume: 80
+      wait: true
+    description: "播放课程总结"
+
+  # 设备停放（480秒）
+  - time: 480
+    action:
+      type: "serial"
+      command: "PARK"
+      retryOnFail: true
+    description: "停放指星仪"
+
+  # 课程结束语音（485秒）
+  - time: 485
+    action:
+      type: "audio"
+      file: "goodbye.mp3"
+      volume: 80
+      wait: true
+    description: "播放课程结束语音"

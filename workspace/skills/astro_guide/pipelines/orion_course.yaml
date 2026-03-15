@@ -1,0 +1,74 @@
+metadata:
+  name: "猎户座深度观测课程"
+  description: "探索猎户座的主要恒星和深空天体"
+  author: "AstroGuide"
+  version: "1.0"
+  created_at: "2024-03-15T10:00:00"
+  duration_estimate: "12min"
+  difficulty: "medium"
+  target_audience: "beginner"
+  tags:
+    - "猎户座"
+    - "星座"
+    - "深空天体"
+    - "冬季星空"
+  requirements:
+    serial_hardware: true
+    tts_audio: true
+    laser_pointer: true
+
+config:
+  mode: "auto"
+  serial_port: null
+  tts_engine: "edge"
+  step_delay: 0.5
+  retry_failed: true
+  max_retries: 3
+  mock_mode: false
+
+steps:
+  - time: "00:00"
+    action: "point_and_speak"
+    target: "猎户座_参宿四"
+    text: "欢迎来到猎户座观测课程！首先，让我们看向猎户座最著名的恒星——参宿四。这是一颗红超巨星，距离地球约640光年，它的直径是太阳的1000倍以上。如果在我们的太阳系中心，它的表面将延伸到木星轨道之外。"
+    duration: 90
+
+  - time: "01:30"
+    action: "point_and_speak"
+    target: "猎户座_参宿七"
+    text: "现在让我们看向猎户座的另一颗亮星——参宿七。与参宿四不同，参宿七是一颗蓝超巨星，亮度约为太阳的12万倍。它位于猎户座的西南角，距离地球约860光年。"
+    duration: 90
+
+  - time: "03:00"
+    action: "point_and_speak"
+    target: "猎户座_M42"
+    text: "接下来是本次观测的亮点——猎户座大星云，编号M42。这是全天最明亮的弥漫星云，距离地球约1344光年。在良好的观测条件下，用肉眼就能看到猎户座腰带下方的模糊光斑。这个星云是一个巨大的恒星形成区，充满了新生的恒星。"
+    duration: 120
+
+  - time: "05:00"
+    action: "point_and_speak"
+    target: "猎户座_参宿一"
+    text: "猎户座腰带由三颗明亮的恒星组成，从东向西分别是参宿一、参宿二和参宿三。让我们先看最东边的参宿一，它的阿拉伯名字是Mintaka，意为'腰带'。实际上它是一个复杂的多星系统。"
+    duration: 90
+
+  - time: "06:30"
+    action: "point_and_speak"
+    target: "猎户座_参宿五"
+    text: "现在让我们看向猎户座的另一肩——参宿五。这是一颗蓝白色的巨星，位于猎户座的西北角。与参宿四形成鲜明对比，参宿五距离地球约250光年。"
+    duration: 90
+
+  - time: "08:00"
+    action: "wait"
+    text: "现在请用肉眼或双筒望远镜仔细观察猎户座的整体形状。试着找出猎户座腰带的三颗星，以及代表肩膀和膝盖的四颗亮星。"
+    duration: 60
+
+  - time: "09:00"
+    action: "point_and_speak"
+    target: "猎户座_M42"
+    text: "最后，让我们再次回到猎户座大星云M42。如果你有双筒望远镜或小型望远镜，现在是一个好机会来观测它。试着观察星云的细节，你可能能看到其中年轻恒星团的朦胧光芒。"
+    duration: 120
+
+  - time: "11:00"
+    action: "home"
+    text: "感谢参与本次猎户座观测课程！希望你对这个壮观的星座有了更深入的了解。"
+    duration: 60

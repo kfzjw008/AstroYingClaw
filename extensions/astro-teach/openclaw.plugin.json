@@ -1,0 +1,151 @@
+{
+  "id": "astro-teach",
+  "name": "天文教学自动化",
+  "version": "1.0.0",
+  "description": "控制天文指星仪、编排课件、执行自动化教学流水线（支持60分钟课程）",
+  "author": "AstroTeach Contributors",
+  "license": "MIT",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": false,
+        "description": "启用天文教学插件"
+      },
+      "config": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "serialPort": {
+            "type": "string",
+            "default": "COM3"
+          },
+          "baudRate": {
+            "type": "number",
+            "default": 9600
+          },
+          "pipelineDir": {
+            "type": "string",
+            "default": "./pipelines"
+          },
+          "audioDir": {
+            "type": "string",
+            "default": "./audio"
+          },
+          "dataDir": {
+            "type": "string",
+            "default": "./data"
+          },
+          "defaultDuration": {
+            "type": "number",
+            "default": 20
+          },
+          "maxDuration": {
+            "type": "number",
+            "default": 60
+          },
+          "audioBackend": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "logLevel": {
+            "type": "string"
+          },
+          "enableLaser": {
+            "type": "boolean"
+          },
+          "laserSafetyDelay": {
+            "type": "number"
+          },
+          "serialTimeout": {
+            "type": "number"
+          },
+          "retryAttempts": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "uiHints": {
+    "enabled": {
+      "label": "启用天文教学",
+      "description": "开启后将加载天文教学功能"
+    },
+    "config.serialPort": {
+      "label": "串口设备",
+      "placeholder": "COM3 或 /dev/ttyUSB0"
+    },
+    "config.baudRate": {
+      "label": "波特率",
+      "placeholder": "9600"
+    },
+    "config.pipelineDir": {
+      "label": "流水线目录",
+      "placeholder": "./pipelines"
+    },
+    "config.audioDir": {
+      "label": "音频目录",
+      "placeholder": "./audio"
+    },
+    "config.defaultDuration": {
+      "label": "默认时长（分钟）",
+      "placeholder": "20"
+    },
+    "config.maxDuration": {
+      "label": "最大时长（分钟）",
+      "placeholder": "60"
+    },
+    "config.audioBackend": {
+      "label": "音频后端",
+      "placeholder": "auto"
+    },
+    "config.timezone": {
+      "label": "时区",
+      "placeholder": "Asia/Shanghai"
+    },
+    "config.logLevel": {
+      "label": "日志级别",
+      "placeholder": "info"
+    },
+    "config.enableLaser": {
+      "label": "启用激光",
+      "description": "启用激光指示器功能"
+    }
+  },
+  "openclaw": {
+    "extensions": ["./index.ts"],
+    "skills": ["./skills/astro-teacher"],
+    "channel": {
+      "id": "astro-teach",
+      "label": "天文教学自动化",
+      "selectionLabel": "天文教学自动化系统",
+      "docsPath": "/plugins/astro-teach",
+      "docsLabel": "astro-teach",
+      "blurb": "自动化天文教学：控制指星仪、编排课件、执行教学流水线",
+      "order": 100,
+      "aliases": ["astro", "天文"]
+    },
+    "install": {
+      "npmSpec": "astro-teach",
+      "localPath": "extensions/astro-teach",
+      "defaultChoice": "local"
+    },
+    "requires": {
+      "bins": ["node"],
+      "env": [],
+      "config": []
+    },
+    "commands": [
+      {
+        "name": "astro",
+        "description": "天文教学自动化命令",
+        "handler": "astroCommand"
+      }
+    ]
+  }
+}

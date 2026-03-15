@@ -1,0 +1,58 @@
+# 例子：lesson-01-summer-stars（包含预生成内容）
+
+name: 夏季星空探索
+version: "2.0"
+author: "天文教学系统"
+duration: 20
+description: "20分钟夏季星空入门课程，内容已由LLM预生成"
+
+steps:
+  - time: 0
+    description: "课程介绍"
+    enabled: true
+    content: "欢迎来到天文课程。今天我们将一起探索星空的奥秘，认识一些著名的恒星和星座。从我们的家园地球出发，去拜访那些遥远而闪耀的恒星。"
+    action:
+      type: serial
+      command: HOME
+
+  - time: 30
+    description: "织女星讲解"
+    enabled: true
+    content: "现在让我们认识织女星。织女星是天琴座最亮的恒星，也是夏季大三角的成员之一，距离我们约25光年。它是一颗质量约为太阳两倍的主序星。"
+    action:
+      type: serial
+      command: MOVE
+      params:
+        objectName: "织女星"
+
+  - time: 75
+    description: "牛郎星讲解"
+    enabled: true
+    content: "接下来是牛郎星，又称河鼓二，位于天鹰座，距离我们约16.7光年。牛郎星是夏季大三角的另一个成员。"
+    action:
+      type: serial
+      command: MOVE
+      params:
+        objectName: "牛郎星"
+
+  - time: 120
+    description: "天津四讲解"
+    enabled: true
+    content: "天津四位于天鹅座的尾部，是夏季大三角的第三颗星，距离我们约2600光年。它的实际光度极高，约为太阳的20万倍。"
+    action:
+      type: serial
+      command: MOVE
+      params:
+        objectName: "天津四"
+
+  - time: 165
+    description: "夏季大三角总结"
+    enabled: true
+    content: "现在让我们欣赏夏季大三角。这是由织女星、牛郎星和天津四组成的星象三角形，横跨银河。"
+    action:
+      type: wait
+      duration: 5000
+
+metadata:
+  content_generated_at: "2024-03-16T12:00:00Z"
+  content_generated_by: "LLM"
