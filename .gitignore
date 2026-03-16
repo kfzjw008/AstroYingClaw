@@ -36,3 +36,4 @@ temp/
 .openclaw/workspace/
 .openclaw/canvas/
 .openclaw/tmp/
+.claude/
