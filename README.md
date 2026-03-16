@@ -243,7 +243,7 @@ MIT License - 详见 [LICENSE](LICENSE)
 
 ## 🤝 贡献
 
-感谢@卷饼睡不醒 的硬件支撑相关工作，感谢 [@Chockmah](https://github.com/Mixsrter)  对本产品的鼎力协助，感谢@majorbill_krieg 对本产品的技术大力指导。感谢@东北林业大学天文爱好者协会 的友情支持。
+感谢@卷饼睡不醒 的硬件支撑相关工作，感谢 [@Chockmah](https://github.com/Mixsrter)  对本产品的鼎力协助，感谢[@MajorBill](https://github.com/MajorBill) 对本产品的技术大力指导。感谢@东北林业大学天文爱好者协会 的友情支持。
 
 ## 👥 后续功能更新计划
 
